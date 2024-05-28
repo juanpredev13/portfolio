@@ -1,0 +1,34 @@
+/* styles/Navbar.css */
+
+.navbar {
+    @apply flex justify-between items-center p-4 bg-gray-800;
+  
+    &__brand {
+      @apply flex items-center;
+  
+      &-icon {
+        @apply bg-white p-1 rounded-full mr-2 text-gray-900;
+      }
+  
+      &-name {
+        @apply font-bold text-lg;
+      }
+    }
+  
+    &__links {
+      @apply flex space-x-4;
+  
+      &-link {
+        @apply text-gray-400;
+  
+        &--active {
+          @apply text-green-500;
+        }
+      }
+    }
+  
+    &__language {
+      @apply text-gray-400;
+    }
+  }
+  
