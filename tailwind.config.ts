@@ -7,7 +7,17 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      'lawn-green': '#7af42a',
+      'turquoise': '#2ae8c4',
+      'gunmetal': '#282c33',
+      'french-gray': '#abb2bf',
+      'white': '#ffffff'
+    },
     extend: {
+      fontFamily: {
+        mono: ['var(--font-fira-mono)'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

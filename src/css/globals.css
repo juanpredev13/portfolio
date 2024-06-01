@@ -1,3 +1,4 @@
+@import "layout/containers.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,9 +32,5 @@ body {
     text-wrap: balance;
   }
 }
-@layer components{
-  .button {
-      @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-  }
-}
+
 

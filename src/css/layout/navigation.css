@@ -1,13 +1,13 @@
-/* styles/Navbar.css */
-
+@import 'containers.css';
 .navbar {
-    @apply flex justify-between items-center p-4 bg-gray-800;
+    @apply container;
+    @apply flex justify-between items-center p-4 bg-gunmetal;
   
     &__brand {
       @apply flex items-center;
   
       &-icon {
-        @apply bg-white p-1 rounded-full mr-2 text-gray-900;
+        @apply bg-white p-1 rounded-full mr-2 text-french-gray;
       }
   
       &-name {
@@ -19,16 +19,16 @@
       @apply flex space-x-4;
   
       &-link {
-        @apply text-gray-400;
+        @apply text-french-gray;
   
         &--active {
-          @apply text-green-500;
+          @apply text-lawn-green;
         }
       }
     }
   
     &__language {
-      @apply text-gray-400;
+      @apply text-french-gray;
     }
   }
   
