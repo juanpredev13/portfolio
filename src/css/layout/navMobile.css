@@ -1,0 +1,60 @@
+/* styles/NavMobile.css */
+.nav-mobile {
+  @apply bg-gunmetal text-french-gray font-mono h-screen p-6 flex flex-col fixed inset-0 z-50;
+
+  &__header {
+    @apply flex justify-between items-center mb-12;
+  }
+
+  &__title {
+    @apply text-white font-bold;
+  }
+
+  &__close {
+    @apply text-french-gray;
+  }
+
+  &__nav {
+    @apply flex flex-col items-center space-y-6 text-2xl;
+  }
+
+  &__link {
+    @apply text-french-gray;
+
+    &--active {
+      @apply text-lawn-green;
+    }
+  }
+
+  &__cta {
+    @apply mt-12 flex justify-center;
+  }
+
+  &__button {
+    @apply bg-lawn-green text-white py-2 px-4 rounded;
+  }
+
+  &__footer {
+    @apply mt-auto flex flex-col items-center;
+  }
+
+  &__language {
+    @apply mb-6 flex items-center space-x-2;
+  }
+
+  &__language-text {
+    @apply text-white;
+  }
+
+  &__language-icon {
+    @apply text-french-gray;
+  }
+
+  &__socials {
+    @apply flex space-x-6;
+  }
+
+  &__social-icon {
+    @apply text-french-gray;
+  }
+}

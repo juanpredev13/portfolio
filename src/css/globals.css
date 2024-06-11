@@ -1,7 +1,23 @@
-@import "layout/containers.css";
+/* base */
+@import 'base/reset';
+@import 'base/typography';
+
+/* layout */
+@import 'layout/navigation.css';
+@import 'layout/navMobile.css';
+
+/* @import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/grid'; */
+
+/* components */
+@import 'components/buttons';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,13 +34,9 @@
 }
 
 body {
+  @apply  bg-gunmetal;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  
 }
 
 @layer utilities {

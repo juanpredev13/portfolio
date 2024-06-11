@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* abstracts */
+
+
+/* base */
+@import 'base/reset';
+@import 'base/typography';
+
+/* layout */
+@import 'layout/navigation.css';
+/* @import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/grid'; */
+
+/* components */
+@import 'components/buttons';
+/* @import 'components/cards'; */
+
+/* pages
+@import 'pages/home';
+@import 'pages/about';  */
+
+/* themes
+@import 'themes/light';
+@import 'themes/dark';
+
+vendor 
+@import 'vendor/normalize'; */

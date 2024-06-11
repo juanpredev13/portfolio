@@ -1,11 +1,8 @@
 
 export default function Home() {
   return (
-    <div>
-      <main>
-          <h1>Welcome to my website</h1>
-          <button className="button">asDAS</button>
+      <main className="container">
+          <h1 className="text-center">Welcome to my website</h1>
       </main>
-    </div>
   );
 }

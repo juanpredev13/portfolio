@@ -3,6 +3,8 @@ import { Fira_Mono } from "next/font/google";
 import Navbar from "../layouts/nav";
 
 import "../css/globals.css";
+import "../css/main.css";
+
 
 const fira_mono = Fira_Mono({
   subsets: ["latin"],
@@ -25,7 +27,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fira_mono.className} antialiased`}>
         <Navbar />
-        {children}
+        <div className="container">
+          {children}
+        </div>
+        
       </body>
     </html>
   );

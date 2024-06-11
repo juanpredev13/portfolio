@@ -1,3 +1,28 @@
-.container{
-    @apply max-w-screen-2xl;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+
+    &--fluid {
+      @apply w-full;
+    }
+  }
+  .main-content{
+
+  }
+
+  .wrapper {
+    @apply flex flex-wrap;
+    
+    &__item {
+      @apply p-4;
+    }
+    
+    &--center {
+      @apply justify-center;
+    }
+  }
 }

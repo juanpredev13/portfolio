@@ -1,34 +1,37 @@
 @import 'containers.css';
+
 .navbar {
-    @apply container;
-    @apply flex justify-between items-center p-4 bg-gunmetal;
-  
+    @apply container flex justify-between items-center p-4;
+
     &__brand {
-      @apply flex items-center;
-  
-      &-icon {
-        @apply bg-white p-1 rounded-full mr-2 text-french-gray;
-      }
-  
-      &-name {
-        @apply font-bold text-lg;
-      }
-    }
-  
-    &__links {
-      @apply flex space-x-4;
-  
-      &-link {
-        @apply text-french-gray;
-  
-        &--active {
-          @apply text-lawn-green;
+        @apply flex items-center w-full sm:w-auto sm:justify-start; /* Añade sm:justify-start */
+
+        &-name {
+            @apply font-bold text-lg mx-auto sm:mx-0 sm:text-left; /* Centrado en móvil, alineado a la izquierda en desktop */
         }
-      }
+
+        &__toggle-icon {
+            @apply text-3xl sm:hidden;
+        }
     }
-  
+    &__toggle {
+        @apply sm:hidden relative order-first; /* Coloca el toggle primero en el orden de los elementos */
+    }
+
+    &__links {
+        @apply flex-col md:flex md:flex-row md:space-x-4;
+        @apply hidden md:flex; /* Oculta los enlaces en dispositivos móviles por defecto */
+
+        &-link {
+            @apply text-french-gray p-2 md:p-0; /* Añade padding en móviles */
+
+            &--active {
+                @apply text-lawn-green;
+            }
+        }
+    }
+
     &__language {
-      @apply text-french-gray;
+        @apply text-french-gray;
     }
-  }
-  
+}
