@@ -1,0 +1,48 @@
+@import 'containers.css';
+
+/* BEM Naming with Tailwind and Nesting */
+.footer {
+    @apply container flex flex-col justify-between  p-4;
+      /* @apply   py-8; */
+  
+    &__container {
+      @apply flex justify-between;
+    }
+  
+    &__left {
+      @apply flex flex-col;
+    }
+  
+    &__title {
+      @apply text-lg font-bold text-white;
+    }
+  
+    &__email {
+      @apply hover:underline;
+    }
+  
+    &__description {
+      /* Aquí puedes añadir estilos adicionales si es necesario */
+    }
+  
+    &__right {
+      @apply flex flex-col items-end;
+    }
+  
+    &__media-title {
+      @apply text-lg font-bold text-white;
+    }
+  
+    &__media-icons {
+      @apply flex space-x-4;
+    }
+  
+    &__media-icon {
+      @apply hover:text-white;
+    }
+  
+    &__copyright {
+      @apply text-center mt-4;
+    }
+  }
+  

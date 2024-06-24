@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* abstracts */
+
 
 
 /* base */
@@ -10,13 +7,17 @@
 
 /* layout */
 @import 'layout/navigation.css';
-/* @import 'layout/footer';
-@import 'layout/sidebar';
-@import 'layout/grid'; */
+@import 'layout/footer';
+/* @import 'layout/sidebar'; */
+/* @import 'layout/grid';  */
 
 /* components */
 @import 'components/buttons';
 /* @import 'components/cards'; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* abstracts */
 
 /* pages
 @import 'pages/home';

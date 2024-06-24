@@ -1,0 +1,24 @@
+.sidebar{
+    @apply w-16 flex flex-col items-center ;
+    
+    &__line{
+        width: 2px;
+        /* Adjust the width as needed */
+      
+        height: 100px;
+        /* Adjust the height as needed */
+      
+        background-color: #000;
+        /* Change color if desired */
+      
+        margin: 0 auto;
+        /* Center the line horizontally */
+      
+        transform: rotate(180deg);
+        /* Rotate the line to make it vertical */
+      
+    }
+    &__icon{
+
+    }
+}

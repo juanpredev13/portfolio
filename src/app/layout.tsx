@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Fira_Mono } from "next/font/google";
 import Navbar from "../layouts/nav";
+import Footer from "../layouts/footer";
+import Sidebar from "../layouts/sidebar";
+
+
 
 import "../css/globals.css";
 import "../css/main.css";
@@ -27,9 +31,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fira_mono.className} antialiased`}>
         <Navbar />
-        <div className="container">
+        {/* <Sidebar /> */}
+        <div className="container h-screen">
           {children}
         </div>
+        <Footer />
+
         
       </body>
     </html>

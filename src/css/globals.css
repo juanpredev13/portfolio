@@ -1,23 +1,20 @@
 /* base */
-@import 'base/reset';
-@import 'base/typography';
+/* @import 'base/reset'; */
+/* @import 'base/typography'; */
 
 /* layout */
 @import 'layout/navigation.css';
 @import 'layout/navMobile.css';
-
-/* @import 'layout/footer';
+@import 'layout/footer.css';
 @import 'layout/sidebar';
-@import 'layout/grid'; */
+/* @import 'layout/grid'; */ 
 
 /* components */
-@import 'components/buttons';
+@import 'components/buttons.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -34,9 +31,8 @@
 }
 
 body {
-  @apply  bg-gunmetal;
+  @apply bg-gunmetal;
   color: rgb(var(--foreground-rgb));
-  
 }
 
 @layer utilities {
@@ -44,5 +40,3 @@ body {
     text-wrap: balance;
   }
 }
-
-
