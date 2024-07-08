@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={`${fira_mono.className} antialiased`}>
         <Navbar />
         {/* <Sidebar /> */}
-        <div className="container h-screen">
+        <div className="container">
           {children}
         </div>
         <Footer />

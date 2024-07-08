@@ -17,7 +17,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar" aria-label="Main Navigation">
+        <nav className="container navbar" aria-label="Main Navigation">
             <div className="navbar__brand">
                 {/* <Logo /> */}
                 <span className="navbar__brand-name">juanpredev</span>
@@ -39,7 +39,6 @@ const Navbar = () => {
                     #contact
                 </Link>
             </div>
-            <div className="navbar__language">EN</div>
             <NavMobile isOpen={isOpen} toggleMenu={toggleMenu} />
         </nav>
     );

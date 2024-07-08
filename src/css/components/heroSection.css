@@ -1,0 +1,71 @@
+/* styles/HeroSection.css */
+.hero-section {
+    @apply flex items-center justify-between;
+  
+    &__content {
+      @apply grid grid-cols-2 grid-rows-1 ;
+    }
+
+    &__text {
+      @apply flex flex-col items-start justify-between;
+    }
+    &__overline{
+      text-transform: uppercase;
+    }
+    &__title {
+      @apply text-4xl md:text-6xl font-bold;
+      width: 20ch;
+    }
+  
+    &__highlight {
+      @apply text-lawn-green;
+    }
+  
+    &__subtitle {
+      @apply  mt-4;
+    }
+  
+    &__button {
+      border-image: url(/btn.svg) 0 20 fill;
+      color: #fff;
+      align-items: center;
+      border-style: solid;
+      border-width: 0 20px;
+      cursor: pointer;
+      display: inline-flex;
+      height: 48px;
+      justify-content: center;
+      min-width: 232px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      -webkit-user-select: none;
+      user-select: none;
+      @apply mt-8 px-6 py-3  font-semibold rounded-md;
+    }
+  
+    &__profile {
+      @apply flex flex-col items-end;
+    }
+  
+    &__image-wrapper {
+      @apply relative w-96 h-48 md:w-96 md:h-96;
+    }
+  
+    &__image {
+        @apply object-contain;
+    }
+  
+    &__info {
+      @apply ml-6;
+    }
+  
+    &__status {
+      @apply font-semibold;
+    }
+  
+    &__project {
+      @apply  font-bold;
+    }
+  }
+  

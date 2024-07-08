@@ -4,7 +4,7 @@
 
 @layer components {
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4  ;
 
     &--fluid {
       @apply w-full;
@@ -14,11 +14,11 @@
 
   }
 
-  .wrapper {
+  .section {
     @apply flex flex-wrap;
     
     &__item {
-      @apply p-4;
+      @apply py-16;
     }
     
     &--center {
