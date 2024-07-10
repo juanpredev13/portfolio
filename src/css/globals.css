@@ -1,6 +1,6 @@
 /* base */
 /* @import 'base/reset'; */
-/* @import 'base/typography'; */
+@import 'base/typography';
 
 /* layout */
 @import 'layout/navigation.css';

@@ -18,7 +18,7 @@
     @apply flex flex-wrap;
     
     &__item {
-      @apply py-16;
+      @apply py-8 md:py-16;
     }
     
     &--center {
