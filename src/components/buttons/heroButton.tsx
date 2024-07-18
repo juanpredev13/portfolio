@@ -1,6 +1,6 @@
 export default function heroButton() {
     return (
-        <button className="hero-section__button">
+        <button className="hero-section__button ">
             Contact me!!
         </button>
     )

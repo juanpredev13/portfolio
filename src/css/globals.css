@@ -34,6 +34,7 @@
 body {
   @apply bg-gunmetal;
   color: rgb(var(--foreground-rgb));
+  height: 95vh;
 }
 
 @layer utilities {

@@ -5,11 +5,11 @@
 /* Tipografía para la aplicación */
 
 .title {
-  @apply text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold;
+  @apply text-6xl sm:text-4xl md:text-5xl lg:text-5xl font-bold;
 }
 
-&--h2 {
-  @apply text-3xl;
+.subtitle {
+  @apply text-5xl;
 }
 
 &--h3 {

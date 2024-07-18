@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fira_mono.className} antialiased`}>
+      <body className={`${fira_mono.className} antialiased flex flex-col justify-between`}>
         <Navbar />
         {/* <Sidebar /> */}
         <div className="container">

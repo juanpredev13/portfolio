@@ -1,16 +1,17 @@
 @import 'containers.css';
-
-/* BEM Naming with Tailwind and Nesting */
 .footer {
     @apply container flex flex-col justify-between  p-4;
-      /* @apply   py-8; */
+     height: 10vh;
   
     &__container {
-      @apply flex justify-between;
+      @apply flex flex-row justify-between items-center;
     }
   
     &__left {
       @apply flex flex-col;
+    }
+    &__contact{
+      @apply flex flex-col md:flex md:justify-between
     }
   
     &__title {
@@ -22,11 +23,11 @@
     }
   
     &__description {
-      /* Aquí puedes añadir estilos adicionales si es necesario */
+       @apply  text-white;
     }
   
     &__right {
-      @apply flex flex-col items-end;
+      @apply flex flex-col md:items-end;
     }
   
     &__media-title {

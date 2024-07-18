@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos que necesitas
 import Logo from "@/components/logo";
+import PrimaryButton from '@/components/buttons/primaryButton';
 import NavMobile from "./navMobile";
 
 const Navbar = () => {
