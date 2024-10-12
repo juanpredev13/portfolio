@@ -18,11 +18,15 @@
     @apply flex flex-wrap;
     
     &__item {
-      @apply py-16;
+      @apply py-8 md:py-10;
     }
     
     &--center {
       @apply justify-center;
     }
+  }
+
+  .title-section{
+    @apply my-8;
   }
 }

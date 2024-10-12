@@ -1,71 +1,73 @@
 /* styles/HeroSection.css */
 .hero-section {
-    @apply flex items-center justify-between;
-  
-    &__content {
-      @apply grid grid-cols-2 grid-rows-1 ;
-    }
+  @apply flex items-center justify-between ;
+  height: 65vh;
+  &__content {
+    gap: 30px;
+    @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-1;
+  }
 
-    &__text {
-      @apply flex flex-col items-start justify-between;
-    }
-    &__overline{
-      text-transform: uppercase;
-    }
-    &__title {
-      @apply text-4xl md:text-6xl font-bold;
-      width: 20ch;
-    }
-  
-    &__highlight {
-      @apply text-lawn-green;
-    }
-  
-    &__subtitle {
-      @apply  mt-4;
-    }
-  
-    &__button {
-      border-image: url(/btn.svg) 0 20 fill;
-      color: #fff;
-      align-items: center;
-      border-style: solid;
-      border-width: 0 20px;
-      cursor: pointer;
-      display: inline-flex;
-      height: 48px;
-      justify-content: center;
-      min-width: 232px;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      -webkit-user-select: none;
-      user-select: none;
-      @apply mt-8 px-6 py-3  font-semibold rounded-md;
-    }
-  
-    &__profile {
-      @apply flex flex-col items-end;
-    }
-  
-    &__image-wrapper {
-      @apply relative w-96 h-48 md:w-96 md:h-96;
-    }
-  
-    &__image {
-        @apply object-contain;
-    }
-  
-    &__info {
-      @apply ml-6;
-    }
-  
-    &__status {
-      @apply font-semibold;
-    }
-  
-    &__project {
-      @apply  font-bold;
+  &__text {
+    @apply flex flex-col items-center md:items-start gap-5 order-2 md:order-1 -mt-24 md:mt-0 justify-between;
+  }
+  &__overline {
+    text-transform: uppercase;
+  }
+  &__title {
+    @apply text-center md:text-left;
+  }
+
+  &__highlight {
+    @apply text-lawn-green;
+  }
+
+  &__subtitle {
+    @apply text-center md:text-left mt-4;
+  }
+  &__button {
+    border-image: url(/btn.svg) 0 20 fill;
+    color: #fff;
+    align-items: center;
+    border-style: solid;
+    border-width: 0 20px;
+    cursor: pointer;
+    display: inline-flex;
+    height: 60px; /* Cambiado a 60px */
+    justify-content: center;
+    min-width: 300px; /* Cambiado a 300px */
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    user-select: none;
+    @apply w-full sm:w-9/12 md:w-6/12 px-6 font-semibold rounded-md order-3;
+    
+    &:hover {
+    
     }
   }
-  
+  &__profile {
+    @apply  hidden md:flex flex-col items-center md:items-end order-1 md:order-2;
+  }
+
+  &__image-wrapper {
+    @apply relative w-96 h-72 md:w-96 md:h-96;
+  }
+
+  &__image {
+    @apply object-contain;
+    mask-image: linear-gradient(gray 40%, transparent);
+  }
+
+  &__info {
+    @apply ml-6;
+  }
+
+  &__status {
+    @apply font-semibold;
+  }
+
+  &__project {
+    @apply font-bold;
+  }
+}

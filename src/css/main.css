@@ -6,7 +6,7 @@
 @import 'base/typography';
 
 /* layout */
-@import 'layout/navigation.css';
+@import 'layout/navigation';
 @import 'layout/footer';
 /* @import 'layout/sidebar'; */
 /* @import 'layout/grid';  */

@@ -1,0 +1,6 @@
+<svg width="232" height="48" viewBox="0 0 232 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <mask id="path-1-inside-1_811_35607" fill="white">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M232 0V29.8571L215.35 48H0V0H232Z" />
+  </mask>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M232 0V29.8571L215.35 48H0V0H232Z" fill="none" stroke="rgb(255, 0, 0)" /> <!-- Cambiado a rojo -->
+</svg>

@@ -7,12 +7,15 @@
         @apply flex items-center w-full sm:w-auto sm:justify-start; /* Añade sm:justify-start */
 
         &-name {
-            @apply font-bold text-lg mx-auto sm:mx-0 sm:text-left; /* Centrado en móvil, alineado a la izquierda en desktop */
+            @apply  bg-gradient-to-r from-lawn-green  to-turquoise text-transparent bg-clip-text;
+            @apply font-bold text-5xl mx-auto sm:mx-0 sm:text-left; /* Centrado en móvil, alineado a la izquierda en desktop */
+            line-height: 1.3;
         }
 
         &__toggle-icon {
             @apply text-3xl sm:hidden;
         }
+        
     }
     &__toggle {
         @apply sm:hidden relative order-first; /* Coloca el toggle primero en el orden de los elementos */

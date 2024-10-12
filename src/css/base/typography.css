@@ -1,3 +1,46 @@
-*{
-    padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Incompleeta";
+    src: url("../../public/fonts/IncompleetaRegular.woff") format("woff2"),
+    url("../../public/fonts/IncompleetaRegular.woff") format("woff");
+  font-weight: normal;
+  }
+}
+
+/* Tipografía para la aplicación */
+
+.title {
+  @apply text-6xl sm:text-4xl md:text-5xl lg:text-5xl font-bold;
+}
+
+.subtitle {
+  @apply font-bold text-4xl;
+}
+
+.title-section{
+  @apply font-bold text-5xl;
+}
+
+&--h4 {
+  @apply text-xl;
+}
+
+&--h5 {
+  @apply text-lg;
+}
+
+&--h6 {
+  @apply text-base;
+}
+
+.navbar__brand-name{
+  @apply font-incompleeta text-6xl;
+}
+
+body{
+  @apply text-white;
 }

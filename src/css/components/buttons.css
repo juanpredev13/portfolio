@@ -1,8 +1,29 @@
 @tailwind components;
 
 @layer components{
-    .button {
-        @apply  font-bold py-2 px-4 rounded;
+    .primary-button {
+        color: #fff;
+        align-items: center;
+        cursor: pointer;
+        display: inline-flex;
+        height: 60px;
+        justify-content: center;
+        width: 150px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-user-select: none;
+        user-select: none;
+        background-color: transparent; /* Fondo transparente */
+        border: 2px solid transparent; /* Borde transparente */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 95% 100%, 0 100%);
+        @apply w-full sm:w-9/12 md:w-6/12 px-6 font-semibold order-3 bg-lawn-green;
+    
+        &:hover {
+          background-color: #0056b3;
+          transform: scale(1.05); /* Efecto de escalado */
+        }
     }
 }
   
