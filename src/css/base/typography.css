@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "Incompleeta";
+    src: url("../../public/fonts/IncompleetaRegular.woff") format("woff2"),
+    url("../../public/fonts/IncompleetaRegular.woff") format("woff");
+  font-weight: normal;
+  }
+}
+
 /* Tipografía para la aplicación */
 
 .title {
@@ -9,11 +18,11 @@
 }
 
 .subtitle {
-  @apply text-5xl;
+  @apply font-bold text-4xl;
 }
 
-&--h3 {
-  @apply text-2xl;
+.title-section{
+  @apply font-bold text-5xl;
 }
 
 &--h4 {
@@ -26,4 +35,12 @@
 
 &--h6 {
   @apply text-base;
+}
+
+.navbar__brand-name{
+  @apply font-incompleeta text-6xl;
+}
+
+body{
+  @apply text-white;
 }

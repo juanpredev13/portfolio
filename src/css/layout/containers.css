@@ -25,4 +25,8 @@
       @apply justify-center;
     }
   }
+
+  .title-section{
+    @apply my-8;
+  }
 }
