@@ -20,6 +20,35 @@ const fira_mono = Fira_Mono({
 export const metadata: Metadata = {
   title: "Juanpredev",
   description: "Web developer",
+  openGraph: {
+    title: 'Juanpredev',
+    description: 'Creative Web Developer Portfolio',
+    url: 'https://juanpre.dev',
+    siteName: 'Juanpre WebSite',
+    images: [
+      {
+        url: 'https://juanpre.dev/man23.jpg',
+        secureUrl: 'https://juanpre.dev/man23.jpg',
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://juanpre.dev/man23.jpg',
+        secureUrl: 'https://juanpre.dev/man23.jpg',
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Juanpredev - Web Developer & Creative Portfolio',
+    description: 'Soy Juanpredev, un desarrollador web especializado en WordPress y React.',
+    images: ['https://juanpre.dev/opengraph-image.jpg'],
+  },
 };
 
 export default function RootLayout({
