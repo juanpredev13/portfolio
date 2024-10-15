@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Juanpredev - Web Developer & Creative Portfolio',
     description: 'Creative Web Developer Portfolio',
-    images: ['https://juanpre.dev/opengraph-image.jpg'],
+    images: ['https://juanpre.dev/man23.jpg'],
   },
 };
 
