@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import { Fira_Mono } from "next/font/google";
 import Navbar from "../layouts/nav";
 import Footer from "../layouts/footer";
@@ -66,6 +67,7 @@ export default function RootLayout({
         {/* <Sidebar /> */}
         <div className="container">
           {children}
+          <Analytics />
         </div>
         <Footer />
 
