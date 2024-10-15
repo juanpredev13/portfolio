@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Juanpredev - Web Developer & Creative Portfolio',
-    description: 'Soy Juanpredev, un desarrollador web especializado en WordPress y React.',
+    description: 'Creative Web Developer Portfolio',
     images: ['https://juanpre.dev/opengraph-image.jpg'],
   },
 };
