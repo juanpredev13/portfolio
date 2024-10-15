@@ -21,6 +21,7 @@ const fira_mono = Fira_Mono({
 export const metadata: Metadata = {
   title: "Juanpredev",
   description: "Web developer",
+  metadataBase: new URL('https://juanpre.dev/opengraph-image.jpg'),
   openGraph: {
     title: 'Juanpredev',
     description: 'Creative Web Developer Portfolio',
