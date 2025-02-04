@@ -8,7 +8,6 @@ export default function Home() {
       <main className="container-fluid">
           <HeroSection />
           <ProjectSection />
-
       </main>
   );
 }

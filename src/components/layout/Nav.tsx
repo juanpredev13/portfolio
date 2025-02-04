@@ -4,8 +4,8 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos que necesitas
-import PrimaryButton from '@/components/common/buttons/PrimaryButton';
-// import NavMobile from "./NavMobile";
+import PrimaryButton from '@/components/buttons/primaryButton';
+import NavMobile from "./navMobile";
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -24,7 +24,10 @@ const Navbar = () => {
                 </button> */}
             </div>
             <div className={`navbar__links ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-4`}>
-                <Link href="https://wa.me/50660691996" className={`navbar__links-link ${pathname === "/contact" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/contact" ? "page" : undefined}>
+                <Link href="#projects" className={`navbar__links-link ${pathname === "/projects" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/projects" ? "page" : undefined}>
+                    #projects
+                </Link>
+                <Link href="https://wa.me/50683067400" className={`navbar__links-link ${pathname === "/contact" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/contact" ? "page" : undefined}>
                     #contact
                 </Link>
             </div>
