@@ -61,9 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fira_mono.className} antialiased flex flex-col justify-between absolute inset-0 bg-gradient-to-br from-[#050505] via-[#0a0a0a] to-[#151515`}>
-      <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-[#7af42a]/20 to-transparent blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#2ae8c4]/20 to-transparent blur-3xl"></div>
-            {/* Radial gradient overlay */}
+        <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-[#7af42a]/20 to-transparent blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#2ae8c4]/20 to-transparent blur-3xl"></div>
+        {/* Radial gradient overlay */}
         <Navbar />
         {/* <Sidebar /> */}
         <div className="container">
@@ -71,9 +71,6 @@ export default function RootLayout({
           <Analytics />
         </div>
         <Footer />
-
-      
-      
       </body>
     </html>
   );

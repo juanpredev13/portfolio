@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="hero-section__profile">
           <div className="hero-section__image-wrapper">
             <Image
-              src="/man4.png" // Reemplaza esto con la ruta a tu imagen
+              src="/man4.png"
               alt="Profile"
               layout="fill"
               objectFit="contain"

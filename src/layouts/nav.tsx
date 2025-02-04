@@ -24,6 +24,9 @@ const Navbar = () => {
                 </button> */}
             </div>
             <div className={`navbar__links ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-4`}>
+                <Link href="#projects" className={`navbar__links-link ${pathname === "/projects" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/projects" ? "page" : undefined}>
+                    #projects
+                </Link>
                 <Link href="https://wa.me/50683067400" className={`navbar__links-link ${pathname === "/contact" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/contact" ? "page" : undefined}>
                     #contact
                 </Link>
