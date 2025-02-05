@@ -1,3 +1,128 @@
-.project-section{
-  height: 90vh;
+.dev-tools-grid {
+  @apply min-h-screen;
+
+  @screen sm {
+    @apply p-8;
+  }
+
+  &__container {
+    @apply max-w-7xl;
+    width: 100%;
+  }
+
+  &__header {
+    @apply text-3xl font-bold mb-6 font-mono text-white;
+
+    @screen sm {
+      @apply text-4xl mb-12;
+    }
+
+    @screen md {
+      @apply text-5xl;
+    }
+  }
+
+  &__navigation {
+    @apply flex flex-col mb-6 gap-4;
+
+    @screen sm {
+      @apply flex-row justify-between items-center;
+    }
+  }
+
+  &__category-nav {
+    @apply flex flex-wrap items-center gap-2;
+  }
+
+  &__mode-nav {
+    @apply flex items-center gap-2;
+  }
+
+  &__nav-label {
+    @apply text-sm font-mono text-lawn-green;
+  }
+
+  &__button {
+    @apply px-2 py-1 text-xs font-mono border transition-all;
+
+    &--active {
+      @apply border-lawn-green bg-lawn-green/10 text-lawn-green;
+    }
+
+    &--inactive {
+      @apply border-white/20 text-white hover:border-lawn-green hover:text-lawn-green;
+    }
+  }
+
+  &__grid {
+    @apply grid gap-4 ;
+
+    &--bento {
+      @apply grid-cols-1;
+
+      @screen sm {
+        @apply md:grid-cols-2;
+      }
+
+      @screen lg {
+        @apply lg:grid-cols-3;
+      }
+    }
+
+    &--tree {
+      @apply grid-cols-1;
+    }
+  }
+
+  &__card {
+    @apply p-6 bg-gunmetal/40 border border-white/10 rounded-sm transition-all;
+
+    &:hover {
+      @apply border-lawn-green/50;
+    }
+  }
+
+  &__card-content {
+    @apply flex flex-col;
+  }
+
+  &__categories {
+    @apply flex gap-2 mb-4;
+  }
+
+  &__category {
+    @apply inline-flex items-center text-xs font-mono text-lawn-green cursor-pointer hover:underline;
+  }
+
+  &__title-wrapper {
+    @apply flex items-start justify-between mb-2;
+  }
+
+  &__title {
+    @apply text-xl font-bold font-mono text-white;
+
+    .group:hover & {
+      @apply text-lawn-green;
+    }
+  }
+
+  &__arrow {
+    @apply w-5 h-5 opacity-0 transition-opacity text-lawn-green;
+
+    .group:hover & {
+      @apply opacity-100;
+    }
+  }
+
+  &__description {
+    @apply text-white/60 text-sm mb-6 font-mono;
+  }
+
+  &__image-wrapper {
+    @apply aspect-video bg-gunmetal/60 rounded-sm overflow-hidden border border-white/10;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover opacity-80;
+  }
 }
