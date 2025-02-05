@@ -6,10 +6,10 @@ import { ArrowUpRight } from "lucide-react"
 import { useState } from "react"
 
 type Category = "FEATURED" | "WORDPRESS" | "NEXTJS" | "REACT" | "GUTENBERG"
+type ViewMode = "BENTO" | "TREE"
 
 const CATEGORIES: Category[] = ["FEATURED", "WORDPRESS", "NEXTJS", "REACT", "GUTENBERG"]
-
-const VIEW_MODES = ["BENTO", "TREE"]
+const VIEW_MODES: ViewMode[] = ["BENTO", "TREE"]
 
 const TOOLS = [
   {
@@ -52,7 +52,7 @@ const TOOLS = [
 
 export default function DevToolsGrid() {
   const [activeCategory, setActiveCategory] = useState<Category>("FEATURED")
-  const [activeMode, setActiveMode] = useState("BENTO")
+  const [activeMode, setActiveMode] = useState<ViewMode>("BENTO")
 
   const filteredTools = TOOLS.filter((tool) => {
     if (activeCategory === "FEATURED") return true
@@ -60,40 +60,36 @@ export default function DevToolsGrid() {
   })
 
   return (
-    <div className="project-section section">
-      <div className="max-w-7xl mx-auto">
+    <div className="dev-tools-grid project-section section">
+      <div className="dev-tools-grid__container">
         {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-12 font-mono text-white">
-          Some Things I've Built
-        </h1>
+        <h1 className="dev-tools-grid__header">Some Things I've Built</h1>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-mono text-[#7af42a]">VIEW :</span>
+        <div className="dev-tools-grid__navigation">
+          <div className="dev-tools-grid__category-nav">
+            <span className="dev-tools-grid__nav-label">VIEW :</span>
             {CATEGORIES.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-2 py-1 text-xs font-mono border transition-all ${activeCategory === category
-                    ? "border-[#7af42a] bg-[#7af42a]/10 text-[#7af42a]"
-                    : "border-white/20 text-white hover:border-[#7af42a] hover:text-[#7af42a]"
-                  }`}
+                className={`dev-tools-grid__button ${
+                  activeCategory === category ? "dev-tools-grid__button--active" : "dev-tools-grid__button--inactive"
+                }`}
               >
                 [{activeCategory === category ? "X" : " "}] {category}
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-mono text-[#7af42a]">MODE :</span>
+          <div className="dev-tools-grid__mode-nav">
+            <span className="dev-tools-grid__nav-label">MODE :</span>
             {VIEW_MODES.map((mode) => (
               <button
                 key={mode}
                 onClick={() => setActiveMode(mode)}
-                className={`px-2 py-1 text-xs font-mono border transition-all ${activeMode === mode
-                    ? "border-[#7af42a] bg-[#7af42a]/10 text-[#7af42a]"
-                    : "border-white/20 text-white hover:border-[#7af42a] hover:text-[#7af42a]"
-                  }`}
+                className={`dev-tools-grid__button ${
+                  activeMode === mode ? "dev-tools-grid__button--active" : "dev-tools-grid__button--inactive"
+                }`}
               >
                 [{activeMode === mode ? "X" : " "}] {mode}
               </button>
@@ -103,18 +99,15 @@ export default function DevToolsGrid() {
 
         {/* Grid */}
         <div
-          className={`grid gap-4 ${activeMode === "BENTO" ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
-            }`}
+          className={`dev-tools-grid__grid ${
+            activeMode === "BENTO" ? "dev-tools-grid__grid--bento" : "dev-tools-grid__grid--tree"
+          }`}
         >
           {filteredTools.map((tool) => (
-            <Link
-              key={tool.title}
-              href="#"
-              className="card-wrapper group p-6 bg-black/40 border border-white/10 hover:border-[#7af42a]/50 rounded-sm transition-all"
-            >
-              <div className="card-content">
+            <Link key={tool.title} href="#" className="group dev-tools-grid__card">
+              <div className="dev-tools-grid__card-content">
                 {/* Categories */}
-                <div className="flex gap-2 mb-4">
+                <div className="dev-tools-grid__categories">
                   {tool.categories.map((category) => (
                     <span
                       key={category}
@@ -122,7 +115,7 @@ export default function DevToolsGrid() {
                         e.preventDefault()
                         setActiveCategory(category)
                       }}
-                      className="inline-flex items-center text-xs font-mono text-[#7af42a] cursor-pointer hover:underline"
+                      className="dev-tools-grid__category"
                     >
                       {category === "WORDPRESS" ? "●" : category === "NEXTJS" ? "△" : category === "REACT" ? "◯" : "⬟"}{" "}
                       {category}
@@ -131,25 +124,24 @@ export default function DevToolsGrid() {
                 </div>
 
                 {/* Title */}
-                <div className="flex items-start justify-between mb-2">
-                  <h2 className="text-xl font-bold font-mono text-white group-hover:text-[#7af42a]">{tool.title}</h2>
-                  <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-[#7af42a]" />
+                <div className="dev-tools-grid__title-wrapper">
+                  <h2 className="dev-tools-grid__title">{tool.title}</h2>
+                  <ArrowUpRight className="dev-tools-grid__arrow" />
                 </div>
 
                 {/* Description */}
-                <p className="text-white/60 text-sm mb-6 font-mono">{tool.description}</p>
+                <p className="dev-tools-grid__description">{tool.description}</p>
 
                 {/* Preview Image */}
-                <div className="aspect-video bg-black/60 rounded-sm overflow-hidden border border-white/10">
+                <div className="dev-tools-grid__image-wrapper">
                   <Image
                     src={tool.image || "/placeholder.svg"}
                     alt={tool.title}
                     width={400}
                     height={300}
-                    className="w-full h-full object-cover opacity-80"
+                    className="dev-tools-grid__image"
                   />
                 </div>
-
               </div>
             </Link>
           ))}
