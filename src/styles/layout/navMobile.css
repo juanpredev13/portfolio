@@ -1,60 +1,80 @@
-/* styles/NavMobile.css */
+@import "navigation.css";
+
 .nav-mobile {
-  @apply bg-gunmetal text-french-gray font-mono h-screen p-6 flex flex-col fixed inset-0 z-50;
+  @apply bg-gunmetal text-french-gray font-mono h-screen w-full p-8 flex flex-col fixed inset-0 z-50;
+  @apply transition-opacity duration-300 ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
 
   &__header {
-    @apply flex justify-between items-center mb-12;
+    @apply flex justify-between items-baseline mb-12;
   }
 
   &__title {
-    @apply text-white font-bold;
+    @apply text-4xl;
   }
 
   &__close {
-    @apply text-french-gray;
-  }
+    @apply text-french-gray p-2 rounded-full transition-colors duration-200;
+    @apply hover:bg-french-gray/10 hover:text-lawn-green;
 
-  &__nav {
-    @apply flex flex-col items-center space-y-6 text-2xl;
-  }
-
-  &__link {
-    @apply text-french-gray;
-
-    &--active {
-      @apply text-lawn-green;
+    svg {
+      @apply w-8 h-8;
     }
   }
 
-  &__cta {
-    @apply mt-12 flex justify-center;
-  }
+  &__content {
+    @apply flex-1 overflow-y-auto font-mono;
+    letter-spacing: -0.5px;
 
-  &__button {
-    @apply bg-lawn-green text-white py-2 px-4 rounded;
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      @apply bg-gunmetal;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-french-gray/20 rounded;
+    }
   }
 
   &__footer {
-    @apply mt-auto flex flex-col items-center;
+    @apply mt-auto flex flex-col items-center pt-8;
   }
 
   &__language {
-    @apply mb-6 flex items-center space-x-2;
+    @apply mb-8 flex items-center space-x-3 cursor-pointer;
   }
 
   &__language-text {
-    @apply text-white;
+    @apply text-white text-xl;
   }
 
   &__language-icon {
-    @apply text-french-gray;
+    @apply text-french-gray w-6 h-6;
   }
 
   &__socials {
-    @apply flex space-x-6;
+    @apply flex space-x-8;
   }
 
   &__social-icon {
-    @apply text-french-gray;
+    @apply text-french-gray transition-colors duration-200;
+    @apply hover:text-lawn-green;
+
+    svg {
+      @apply w-8 h-8;
+    }
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
