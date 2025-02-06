@@ -1,11 +1,12 @@
-"use client"; 
+"use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos que necesitas
-import PrimaryButton from '@/components/buttons/primaryButton';
-import NavMobile from "./navMobile";
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import dynamic from 'next/dynamic';
+
+const NavMobile = dynamic(() => import("./navMobile"), { ssr: false });
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -15,23 +16,47 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isOpen]);
+
+    const navLinks = [
+        { href: "/", label: "#home" },
+        { href: "/projects", label: "#projects" },
+        { href: "/about-me", label: "#about-me" },
+        { href: "/contact", label: "#contact" },
+    ];
+
     return (
         <nav className="container navbar" aria-label="Main Navigation">
             <div className="navbar__brand">
-                <span className="navbar__brand-name">juanpredev</span>
-                {/* <button className="navbar__toggle" onClick={toggleMenu}>
+                <Link href="/" className="navbar__brand-name">juanpredev</Link>
+                <button 
+                    className="navbar__toggle" 
+                    onClick={toggleMenu}
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
+                >
                     <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="navbar__toggle-icon" />
-                </button> */}
+                </button>
             </div>
-            <div className={`navbar__links ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-4`}>
-                <Link href="#projects" className={`navbar__links-link ${pathname === "/projects" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/projects" ? "page" : undefined}>
-                    #projects
-                </Link>
-                <Link href="https://wa.me/50683067400" className={`navbar__links-link ${pathname === "/contact" ? "navbar__links-link--active" : ""}`} aria-current={pathname === "/contact" ? "page" : undefined}>
-                    #contact
-                </Link>
+            <div className="navbar__links">
+                {navLinks.map((link) => (
+                    <Link 
+                        key={link.href}
+                        href={link.href} 
+                        className={`navbar__links-link ${pathname === link.href ? "navbar__links-link--active" : ""}`}
+                        aria-current={pathname === link.href ? "page" : undefined}
+                    >
+                        {link.label}
+                    </Link>
+                ))}
             </div>
-            {/* <NavMobile isOpen={isOpen} toggleMenu={toggleMenu} /> */}
+            <NavMobile isOpen={isOpen} toggleMenu={toggleMenu} navLinks={navLinks} />
         </nav>
     );
 };
