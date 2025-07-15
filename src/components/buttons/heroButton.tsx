@@ -4,7 +4,7 @@ export default function HeroButton() {
     const glitch = useGlitch();
     
     // Número de WhatsApp al que deseas redirigir
-    const whatsappNumber = '50683067400'; // Reemplaza con tu número de WhatsApp
+    const whatsappNumber = '50660691996'; // Reemplaza con tu número de WhatsApp
     
     const handleClick = () => {
         // Formato para abrir WhatsApp con el número
