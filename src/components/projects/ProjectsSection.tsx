@@ -12,6 +12,8 @@ export default function Component() {
   const [mode, setMode] = useState<ProjectMode>('BENTO')
 
   const tools = projects
+  const viewOptions: ProjectView[] = ['FEATURED', 'ORDINALS', 'STACKS']
+  const modeOptions: ProjectMode[] = ['BENTO', 'TREE']
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -20,7 +22,7 @@ export default function Component() {
       <div className="flex justify-between mb-6">
         <div className="space-x-2 bg-transparent">
           <span className="text-sm font-medium">VIEW:</span>
-          {['FEATURED', 'ORDINALS', 'STACKS'].map((option) => (
+          {viewOptions.map((option) => (
             <Button
               key={option}
               variant={view === option ? "default" : "outline"}
@@ -33,7 +35,7 @@ export default function Component() {
         </div>
         <div className="space-x-2">
           <span className="text-sm bg-transparent font-medium">MODE:</span>
-          {['BENTO', 'TREE'].map((option) => (
+          {modeOptions.map((option) => (
             <Button
               key={option}
               variant={mode === option ? "default" : "outline"}

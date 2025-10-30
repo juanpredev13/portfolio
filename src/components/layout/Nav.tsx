@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos que necesitas
 import PrimaryButton from '@/components/common/buttons/PrimaryButton';
-import NavMobile from "./navMobile";
+// import NavMobile from "./NavMobile";
 
 const Navbar = () => {
     const pathname = usePathname();
