@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import { Fira_Mono } from "next/font/google";
-import Navbar from "../layouts/nav";
-import Footer from "../layouts/footer";
-import Sidebar from "../layouts/sidebar";
+import Navbar from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
+import Sidebar from "@/components/layout/Sidebar";
 
-
-
-import "../css/globals.css";
-import "../css/main.css";
+import "@/styles/globals.css";
+import "@/styles/main.css";
 
 
 const fira_mono = Fira_Mono({
@@ -29,14 +27,14 @@ export const metadata: Metadata = {
     siteName: 'Juanpre WebSite',
     images: [
       {
-        url: 'https://juanpre.dev/man23.jpg',
-        secureUrl: 'https://juanpre.dev/man23.jpg',
+        url: 'https://juanpre.dev/images/man23.jpg',
+        secureUrl: 'https://juanpre.dev/images/man23.jpg',
         width: 800,
         height: 600,
       },
       {
-        url: 'https://juanpre.dev/man23.jpg',
-        secureUrl: 'https://juanpre.dev/man23.jpg',
+        url: 'https://juanpre.dev/images/man23.jpg',
+        secureUrl: 'https://juanpre.dev/images/man23.jpg',
         width: 1800,
         height: 1600,
         alt: 'My custom alt',
@@ -49,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Juanpredev - Web Developer & Creative Portfolio',
     description: 'Creative Web Developer Portfolio',
-    images: ['https://juanpre.dev/man23.jpg'],
+    images: ['https://juanpre.dev/images/man23.jpg'],
   },
 };
 

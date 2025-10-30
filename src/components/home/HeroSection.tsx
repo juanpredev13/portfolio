@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import HeroButton from '@/components/buttons/heroButton';
+import HeroButton from '@/components/home/HeroButton';
 
 export default function HeroSection() {
   return (
@@ -20,10 +20,10 @@ export default function HeroSection() {
         <div className="hero-section__profile">
           <div className="hero-section__image-wrapper">
             <Image
-              src="/man4.png" // Reemplaza esto con la ruta a tu imagen
+              src="/images/man4.png"
               alt="Profile"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: 'contain' }}
               className="hero-section__image"
             />
           </div>
