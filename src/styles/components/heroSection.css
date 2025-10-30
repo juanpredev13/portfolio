@@ -25,7 +25,7 @@
     @apply text-center md:text-left mt-4;
   }
   &__button {
-    border-image: url(/btn.svg) 0 20 fill;
+    border-image: url(/icons/btn.svg) 0 20 fill;
     color: #fff;
     align-items: center;
     border-style: solid;

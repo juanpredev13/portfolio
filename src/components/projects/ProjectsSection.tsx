@@ -1,52 +1,17 @@
 "use client";
 import { useState } from 'react'
 import Image from 'next/image'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/common/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/common/ui/card"
+import { Badge } from "@/components/common/ui/badge"
+import { projects } from '@/constants/projects'
+import { ProjectView, ProjectMode } from '@/types/project'
 
 export default function Component() {
-  const [view, setView] = useState('FEATURED')
-  const [mode, setMode] = useState('BENTO')
+  const [view, setView] = useState<ProjectView>('FEATURED')
+  const [mode, setMode] = useState<ProjectMode>('BENTO')
 
-  const tools = [
-    {
-      title: "Ordinals Explorer",
-      description: "Search, filter, and explore Ordinals inscriptions.",
-      tags: ["ORDINALS"],
-      image: "/abcislands.png",
-    },
-    {
-      title: "Chainhook",
-      description: "Build smarter apps with webhook-like triggers that react to onchain events in real time.",
-      tags: ["STACKS"],
-      image: "/abcislands.png",
-    },
-    {
-      title: "Hiro Platform",
-      description: "The web3 development platform for Stacks.",
-      tags: ["STACKS", "ORDINALS"],
-      image: "/abcislands.png",
-    },
-    {
-      title: "Clarinet",
-      description: "Rapidly develop and test Clarity smart contracts.",
-      tags: ["STACKS"],
-      image: "/abcislands.png",
-    },
-    {
-      title: "Ordhook",
-      description: "Build indexers, standards and protocols on top of Ordinals and Inscriptions.",
-      tags: ["ORDINALS"],
-      image: "/abcislands.png",
-    },
-    {
-      title: "Stacks Explorer",
-      description: "The #1 explorer for Stacks.",
-      tags: ["STACKS"],
-      image: "/abcislands.png",
-    },
-  ]
+  const tools = projects
 
   return (
     <div className="container mx-auto px-4 py-8">
