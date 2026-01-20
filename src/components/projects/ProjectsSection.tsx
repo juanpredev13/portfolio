@@ -72,6 +72,7 @@ export default function DevToolsGrid() {
             {CATEGORIES.map((category) => (
               <button
                 key={category}
+                type="button"
                 onClick={() => setActiveCategory(category)}
                 className={`dev-tools-grid__button ${
                   activeCategory === category ? "dev-tools-grid__button--active" : "dev-tools-grid__button--inactive"
@@ -86,6 +87,7 @@ export default function DevToolsGrid() {
             {VIEW_MODES.map((mode) => (
               <button
                 key={mode}
+                type="button"
                 onClick={() => setActiveMode(mode)}
                 className={`dev-tools-grid__button ${
                   activeMode === mode ? "dev-tools-grid__button--active" : "dev-tools-grid__button--inactive"
@@ -104,30 +106,28 @@ export default function DevToolsGrid() {
           }`}
         >
           {filteredTools.map((tool) => (
-            <Link key={tool.title} href="#" className="group dev-tools-grid__card">
+            <div key={tool.title} className="group dev-tools-grid__card">
               <div className="dev-tools-grid__card-content">
                 {/* Categories */}
                 <div className="dev-tools-grid__categories">
                   {tool.categories.map((category) => (
-                    <span
+                    <button
                       key={category}
-                      onClick={(e) => {
-                        e.preventDefault()
-                        setActiveCategory(category)
-                      }}
+                      type="button"
+                      onClick={() => setActiveCategory(category)}
                       className="dev-tools-grid__category"
                     >
                       {category === "WORDPRESS" ? "●" : category === "NEXTJS" ? "△" : category === "REACT" ? "◯" : "⬟"}{" "}
                       {category}
-                    </span>
+                    </button>
                   ))}
                 </div>
 
                 {/* Title */}
-                <div className="dev-tools-grid__title-wrapper">
+                <Link href="#" className="dev-tools-grid__title-wrapper">
                   <h2 className="dev-tools-grid__title">{tool.title}</h2>
                   <ArrowUpRight className="dev-tools-grid__arrow" />
-                </div>
+                </Link>
 
                 {/* Description */}
                 <p className="dev-tools-grid__description">{tool.description}</p>
@@ -143,7 +143,7 @@ export default function DevToolsGrid() {
                   />
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
