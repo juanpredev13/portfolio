@@ -92,6 +92,9 @@
 
   &__category {
     @apply inline-flex items-center text-xs font-mono text-lawn-green cursor-pointer hover:underline;
+    background: none;
+    border: none;
+    padding: 0;
   }
 
   &__title-wrapper {
