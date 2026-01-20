@@ -2,18 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
-interface Song {
-  item: {
-    name: string;
-    artists: { name: string }[];
-    album: { images: { url: string }[] };
-  } | null;
-  isPlaying: boolean;
-}
+import { CurrentlyPlayingResponse } from '@/types/spotify';
 
 export default function Song() {
-  const [song, setSong] = useState<Song | null>(null);
+  const [song, setSong] = useState<CurrentlyPlayingResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
