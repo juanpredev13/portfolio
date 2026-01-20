@@ -162,3 +162,22 @@ Recent focus areas:
 - Navigation mobile refinements
 - Project section layout improvements
 - OpenGraph/social sharing optimization
+
+### Commit Message Preferences
+
+**IMPORTANT**: Do NOT include Claude Code collaboration messages in commits. Write simple, clear commit messages without:
+- "🤖 Generated with [Claude Code]" footers
+- "Co-Authored-By: Claude Sonnet" attributions
+- Any Claude-related metadata
+
+Example:
+```bash
+# Good
+git commit -m "add projects filtering functionality"
+
+# Bad - Don't do this
+git commit -m "add projects filtering
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+```
