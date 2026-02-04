@@ -40,7 +40,7 @@ export default function DevToolsGrid({ featuredOnly = false, showFilters = true 
   return (
     <div className="dev-tools-grid project-section section">
         {/* Header */}
-        <h1 className="dev-tools-grid__header">Some Things I've Built</h1>
+        <h1 className="dev-tools-grid__header">Some Things I&apos;ve Built</h1>
 
         {/* Navigation */}
         {showFilters && (
