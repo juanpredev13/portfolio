@@ -1,14 +1,15 @@
 /* styles/HeroSection.css */
 .hero-section {
-  @apply flex items-center justify-between ;
-  height: 90vh;
+  @apply flex items-center justify-center w-full;
+  min-height: 90vh;
+
   &__content {
     gap: 30px;
     @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-1;
   }
 
   &__text {
-    @apply flex flex-col items-center md:items-start gap-5 order-2 md:order-1 -mt-24 md:mt-0 justify-between;
+    @apply flex flex-col items-center md:items-start gap-5 order-2 md:order-1 md:mt-0;
   }
   &__overline {
     text-transform: uppercase;
@@ -25,25 +26,27 @@
     @apply text-center md:text-left mt-4;
   }
   &__button {
-    border-image: url(/icons/btn.svg) 0 20 fill;
-    color: #fff;
-    align-items: center;
-    border-style: solid;
-    border-width: 0 20px;
-    cursor: pointer;
-    display: inline-flex;
-    height: 60px; /* Cambiado a 60px */
-    justify-content: center;
-    min-width: 300px; /* Cambiado a 300px */
-    text-align: center;
-    text-decoration: none;
+    /* Colors and Typography */
+    background-color: rgba(122, 244, 42, 0.1);
+    color: #7af42a;
+    font-weight: 800;
     text-transform: uppercase;
-    -webkit-user-select: none;
-    user-select: none;
-    @apply w-full sm:w-9/12 md:w-6/12 px-6 font-semibold rounded-md order-3;
-    
+    letter-spacing: 1px;
+
+    /* Sizing and Border */
+    padding: 12px 32px;
+    border: 1px solid #7af42a;
+    cursor: pointer;
+    position: relative;
+
+    /* Smooth Transition for Hover */
+    transition: all 0.2s ease-in-out;
+
     &:hover {
-    
+      background-color: #7af42a;
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0px 0px 15px rgba(122, 244, 42, 0.6);
     }
   }
   &__profile {
@@ -69,5 +72,51 @@
 
   &__project {
     @apply font-bold;
+  }
+
+  /* Scroll indicator */
+  &__scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 2px solid #7af42a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+
+    &:hover {
+      background: #7af42a;
+
+      .hero-section__scroll-icon {
+        color: #000000;
+      }
+    }
+  }
+
+  &__scroll-icon {
+    color: #7af42a;
+    width: 24px;
+    height: 24px;
+    transition: color 0.3s ease;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
   }
 }

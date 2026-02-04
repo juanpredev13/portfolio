@@ -25,7 +25,7 @@
     }
   
     &__right {
-      @apply flex flex-col md:items-end;
+      @apply flex flex-col w-full sm:w-auto md:items-end;
     }
   
     &__media-title {
@@ -33,7 +33,7 @@
     }
   
     &__media-icons {
-      @apply flex space-x-4;
+      @apply flex justify-between w-full sm:w-auto sm:justify-start sm:space-x-4;
     }
   
     &__media-icon {

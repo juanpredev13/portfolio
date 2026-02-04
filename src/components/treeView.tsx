@@ -12,10 +12,7 @@ const treeData: TreeItem[] = [
     {
         label: "Juanpredev/",
         children: [
-            { label: "projects.ts", href: "#" },
-            { label: "aboutMe.ts", href: "#" },
-            { label: "contactMe.scss", href: "#" },
-            { label: "blog.tsx", href: "#" },
+            { label: "projects.ts", href: "/projects" },
         ]
     },
 ]

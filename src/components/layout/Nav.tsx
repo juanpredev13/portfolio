@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import dynamic from 'next/dynamic';
 
-const NavMobile = dynamic(() => import("./navMobile"), { ssr: false });
+const NavMobile = dynamic(() => import("./NavMobile"), { ssr: false });
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -25,10 +25,7 @@ const Navbar = () => {
     }, [isOpen]);
 
     const navLinks = [
-        { href: "/", label: "#home" },
         { href: "/projects", label: "#projects" },
-        { href: "/about-me", label: "#about-me" },
-        { href: "/contact", label: "#contact" },
     ];
 
     return (
@@ -46,9 +43,9 @@ const Navbar = () => {
             </div>
             <div className="navbar__links">
                 {navLinks.map((link) => (
-                    <Link 
+                    <Link
                         key={link.href}
-                        href={link.href} 
+                        href={link.href}
                         className={`navbar__links-link ${pathname === link.href ? "navbar__links-link--active" : ""}`}
                         aria-current={pathname === link.href ? "page" : undefined}
                     >
@@ -56,7 +53,7 @@ const Navbar = () => {
                     </Link>
                 ))}
             </div>
-            <NavMobile isOpen={isOpen} toggleMenu={toggleMenu} navLinks={navLinks} />
+            <NavMobile isOpen={isOpen} toggleMenu={toggleMenu} />
         </nav>
     );
 };
