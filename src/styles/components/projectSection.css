@@ -1,14 +1,5 @@
 .dev-tools-grid {
-  @apply min-h-screen;
-
-  @screen sm {
-    @apply p-8;
-  }
-
-  &__container {
-    @apply max-w-7xl;
-    width: 100%;
-  }
+  @apply min-h-screen w-full;
 
   &__header {
     @apply text-3xl font-bold mb-6 font-mono text-white;
@@ -127,5 +118,17 @@
 
   &__image {
     @apply w-full h-full object-cover opacity-80;
+  }
+
+  &__see-more {
+    @apply flex justify-center mt-12 w-full;
+  }
+
+  &__see-more-btn {
+    @apply px-6 py-2 font-mono text-lawn-green border border-lawn-green rounded-sm transition-all inline-flex items-center gap-1;
+
+    &:hover {
+      @apply bg-lawn-green/10;
+    }
   }
 }

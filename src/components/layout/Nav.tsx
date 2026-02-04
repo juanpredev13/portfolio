@@ -25,10 +25,7 @@ const Navbar = () => {
     }, [isOpen]);
 
     const navLinks = [
-        { href: "/", label: "#home" },
         { href: "/projects", label: "#projects" },
-        { href: "/about-me", label: "#about-me" },
-        { href: "/contact", label: "#contact" },
     ];
 
     return (

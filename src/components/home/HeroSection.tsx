@@ -1,11 +1,17 @@
 "use client";
 import Image from 'next/image';
 import HeroButton from '@/components/home/HeroButton';
+import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('.project-section');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="hero-section section">
-      <div className="hero-section__content">
+        <div className="hero-section__content">
         <div className="hero-section__text">
           <p className="hero-section__overline">Hello, my name is</p>
           <h1 className="hero-section__title title">
@@ -65,6 +71,11 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <button className="hero-section__scroll-indicator" onClick={scrollToProjects} aria-label="Scroll to projects">
+        <ChevronDown className="hero-section__scroll-icon" />
+      </button>
     </div>
   );
 }

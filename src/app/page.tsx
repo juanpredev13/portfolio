@@ -3,9 +3,9 @@ import ProjectSection from "@/components/projects/ProjectsSection";
 
 export default function Home() {
   return (
-      <main className="container-fluid">
+      <>
           <HeroSection />
-          <ProjectSection />
-      </main>
+          <ProjectSection featuredOnly showFilters={false} />
+      </>
   );
 }
