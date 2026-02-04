@@ -58,6 +58,11 @@ This project uses a **hybrid CSS approach**:
 - `turquoise: #2ae8c4` - Secondary accent
 - `gunmetal: #050505` - Dark background
 - `french-gray: #abb2bf` - Text color
+- Shadcn-style CSS variable colors (`--border`, `--primary`, etc.) for UI components
+
+**Custom Font**: `font-incompleeta` - Custom display font
+
+**Custom Animation**: `animate-border-spin` - 7s infinite rotation for decorative borders
 
 **CSS Import Chain**: `src/css/main.css` → imports from `base/`, `layout/`, `components/`
 
@@ -111,7 +116,7 @@ Spotify credentials are exposed to client via `next.config.mjs`:
 - `SPOTIFY_CLIENT_SECRET`
 - `SPOTIFY_REFRESH_TOKEN`
 
-Note: The Song component references `/api/currently-playing` but this API route doesn't exist yet.
+Note: The Song component references `/api/currently-playing` but the `src/app/api/` directory doesn't exist yet - this API route needs to be created.
 
 ## Working with CSS
 

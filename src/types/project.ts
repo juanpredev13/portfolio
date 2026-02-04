@@ -1,9 +1,10 @@
 export interface Project {
   title: string;
   description: string;
-  tags: string[];
+  categories: ProjectCategory[];
   image: string;
+  url: string;
 }
 
-export type ProjectView = 'FEATURED' | 'ORDINALS' | 'STACKS';
+export type ProjectCategory = 'FEATURED' | 'WORDPRESS' | 'BRICKS' | 'ELEMENTOR' | 'GUTENBERG' | 'WOOCOMMERCE' | 'REACT' | 'NEXTJS';
 export type ProjectMode = 'BENTO' | 'TREE';

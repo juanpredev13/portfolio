@@ -51,7 +51,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        incompleeta: ['Incompleeta', 'sans-serif']
+        incompleeta: ['Incompleeta', 'sans-serif'],
+        mono: ['var(--font-fira-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

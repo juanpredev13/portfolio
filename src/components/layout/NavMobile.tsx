@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 import { useEffect, useRef } from "react"
-import { TreeView } from "../components/treeView"
+import { TreeView } from "../treeView"
 import { X } from "lucide-react" // Import the X icon from lucide-react
 
 interface NavMobileProps {
