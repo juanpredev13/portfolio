@@ -25,21 +25,17 @@
   &__subtitle {
     @apply text-center md:text-left mt-4;
   }
+
   &__button {
-    /* Colors and Typography */
     background-color: rgba(122, 244, 42, 0.1);
     color: #7af42a;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-
-    /* Sizing and Border */
     padding: 12px 32px;
     border: 1px solid #7af42a;
     cursor: pointer;
     position: relative;
-
-    /* Smooth Transition for Hover */
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -49,9 +45,16 @@
       box-shadow: 0px 0px 15px rgba(122, 244, 42, 0.6);
     }
   }
+
   /* Glass Card */
   &__glass-wrapper {
-    @apply relative hidden md:flex items-center justify-center order-1 md:order-2;
+    @apply hidden md:flex items-start justify-end order-1 md:order-2;
+    align-self: start;
+    min-height: 20rem; /* Prevents layout jump when child becomes fixed */
+  }
+
+  &__glass-float {
+    position: relative;
   }
 
   &__aura {
@@ -67,7 +70,9 @@
   }
 
   &__glass-card {
-    @apply relative w-72 h-80 rounded-3xl overflow-hidden flex flex-col;
+    @apply relative rounded-3xl overflow-hidden flex flex-col;
+    width: clamp(8rem, 20vw, 18rem);
+    height: clamp(10rem, 28vw, 22rem);
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -84,7 +89,7 @@
     top: 0;
     left: -30px;
     right: 0;
-    bottom: 80px;
+    bottom: 110px;
   }
 
   &__profile-img {
@@ -120,7 +125,7 @@
   }
 
   &__glass-footer {
-    @apply h-20 px-6 flex items-center justify-between;
+    @apply h-12 px-4 flex items-center justify-between;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.2);
   }
@@ -132,6 +137,22 @@
   &__slash {
     @apply text-lawn-green opacity-60;
     font-size: 10px;
+  }
+
+  &__glass-cta {
+    @apply w-full text-xs font-bold tracking-[0.2em] uppercase;
+    padding: 14px 0;
+    background: rgba(0, 0, 0, 0.2);
+    color: #7af42a;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #7af42a;
+      color: #000000;
+    }
   }
 
   /* Scroll indicator */

@@ -117,7 +117,8 @@
   }
 
   &__image {
-    @apply w-full h-full object-cover opacity-80;
+    @apply w-full h-full object-cover;
+    filter: grayscale(0.8) brightness(0.5);
   }
 
   &__see-more {
