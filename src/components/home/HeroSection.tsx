@@ -11,7 +11,7 @@ export default function HeroSection() {
 
   return (
     <div className="hero-section section">
-        <div className="hero-section__content">
+      <div className="hero-section__content">
         <div className="hero-section__text">
           <p className="hero-section__overline">Hello, my name is</p>
           <h1 className="hero-section__title title">
@@ -23,51 +23,37 @@ export default function HeroSection() {
           <HeroButton />
         </div>
 
-        <div className="hero-section__profile">
-          <div className="hero-section__image-wrapper">
-            <Image
-              src="/images/man4.png"
-              alt="Profile"
-              fill
-              style={{ objectFit: 'contain' }}
-              className="hero-section__image"
-            />
-          </div>
-
-          <div className="hero-section__info mt-6">
-            {/* Logos de tecnologías */}
-            {/* <div className="hero-section__logos flex space-x-4 justify-center md:justify-start mt-4">
+        {/* Glass Card with Aura */}
+        <div className="hero-section__glass-wrapper">
+          <div className="hero-section__aura"></div>
+          <div className="hero-section__glass-card">
+            <div className="hero-section__glass-glow">
+              <div className="hero-section__orb hero-section__orb--1"></div>
+              <div className="hero-section__orb hero-section__orb--2"></div>
+              <div className="hero-section__orb hero-section__orb--3"></div>
+            </div>
+            {/* Profile image overlay */}
+            <div className="hero-section__profile-overlay">
               <Image
-                src="/wordpress-logo.svg" // Reemplaza esto con la ruta correcta del logo de WordPress
-                alt="WordPress Logo"
-                width={50}
-                height={50}
+                src="/images/man4.webp"
+                alt="Juanpre"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="hero-section__profile-img"
               />
-              <Image
-                src="/nextjs-logo.svg" // Reemplaza esto con la ruta correcta del logo de Next.js
-                alt="Next.js Logo"
-                width={50}
-                height={50}
-              />
-              <Image
-                src="/bricks-logo.png" // Reemplaza esto con la ruta correcta del logo de Bricks
-                alt="Bricks Logo"
-                width={50}
-                height={50}
-              />
-              <Image
-                src="gutenberg-logo.svg" // Reemplaza esto con la ruta correcta del logo de Gutenberg
-                alt="Gutenberg Logo"
-                width={50}
-                height={50}
-              />
-                <Image
-                src="acf-logo.svg" // Reemplaza esto con la ruta correcta del logo de Gutenberg
-                alt="Acf Logo"
-                width={50}
-                height={50}
-              />
-            </div> */}
+            </div>
+            <div className="hero-section__glass-footer">
+              <div className="hero-section__status">
+                <span className="hero-section__slash">//</span>
+                <span>AVAILABLE</span>
+                <span className="hero-section__slash">//</span>
+              </div>
+              <div className="hero-section__status">
+                <span className="hero-section__slash">//</span>
+                <span>Q1 2026</span>
+                <span className="hero-section__slash">//</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

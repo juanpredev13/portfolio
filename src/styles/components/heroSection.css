@@ -49,29 +49,89 @@
       box-shadow: 0px 0px 15px rgba(122, 244, 42, 0.6);
     }
   }
-  &__profile {
-    @apply  hidden md:flex flex-col items-center md:items-end order-1 md:order-2;
+  /* Glass Card */
+  &__glass-wrapper {
+    @apply relative hidden md:flex items-center justify-center order-1 md:order-2;
   }
 
-  &__image-wrapper {
-    @apply relative w-96 h-72 md:w-96 md:h-96;
+  &__aura {
+    @apply absolute w-64 h-64 rounded-full;
+    background: rgba(122, 244, 42, 0.2);
+    filter: blur(40px);
+    animation: pulse-aura 4s ease-in-out infinite;
   }
 
-  &__image {
+  @keyframes pulse-aura {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+
+  &__glass-card {
+    @apply relative w-72 h-80 rounded-3xl overflow-hidden flex flex-col;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  &__glass-glow {
+    @apply flex-grow relative overflow-hidden flex items-center justify-center;
+  }
+
+  &__profile-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -30px;
+    right: 0;
+    bottom: 80px;
+  }
+
+  &__profile-img {
     @apply object-contain;
-    mask-image: linear-gradient(gray 40%, transparent);
+    object-position: bottom;
+    mask-image: linear-gradient(to top, transparent 0%, black 15%);
   }
 
-  &__info {
-    @apply ml-6;
+  &__orb {
+    @apply absolute rounded-full;
+    filter: blur(30px);
+    mix-blend-mode: screen;
+
+    &--1 {
+      @apply w-48 h-48;
+      background: rgba(122, 244, 42, 0.4);
+      animation: pulse-aura 4s ease-in-out infinite;
+    }
+
+    &--2 {
+      @apply w-24 h-24;
+      top: 25%;
+      left: 25%;
+      background: rgba(42, 232, 196, 0.5);
+    }
+
+    &--3 {
+      @apply w-28 h-28;
+      top: 33%;
+      right: 25%;
+      background: rgba(122, 244, 42, 0.6);
+    }
+  }
+
+  &__glass-footer {
+    @apply h-20 px-6 flex items-center justify-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
   }
 
   &__status {
-    @apply font-semibold;
+    @apply flex items-center gap-1 text-xs tracking-[0.2em] text-white/90 font-medium;
   }
 
-  &__project {
-    @apply font-bold;
+  &__slash {
+    @apply text-lawn-green opacity-60;
+    font-size: 10px;
   }
 
   /* Scroll indicator */

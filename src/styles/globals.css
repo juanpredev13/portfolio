@@ -11,6 +11,7 @@
 
 /* components */
 @import "components/heroSection.css";
+@import "components/heroExamples.css";
 @import "components/projectSection.css";
 @import "components/buttons.css";
 

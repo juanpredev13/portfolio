@@ -27,17 +27,11 @@ export const metadata: Metadata = {
     siteName: 'Juanpre WebSite',
     images: [
       {
-        url: 'https://juanpre.dev/images/man23.jpg',
-        secureUrl: 'https://juanpre.dev/images/man23.jpg',
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://juanpre.dev/images/man23.jpg',
-        secureUrl: 'https://juanpre.dev/images/man23.jpg',
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
+        url: 'https://juanpre.dev/images/man23.webp',
+        secureUrl: 'https://juanpre.dev/images/man23.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Juanpre - Web Developer',
       },
     ],
     locale: 'en_US',
@@ -47,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Juanpredev - Web Developer & Creative Portfolio',
     description: 'Creative Web Developer Portfolio',
-    images: ['https://juanpre.dev/images/man23.jpg'],
+    images: ['https://juanpre.dev/images/man23.webp'],
   },
 };
 
