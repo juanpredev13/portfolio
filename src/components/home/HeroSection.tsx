@@ -44,14 +44,14 @@ export default function HeroSection() {
             </div>
             <div className="hero-section__glass-footer">
               <div className="hero-section__status">
-                <span className="hero-section__slash">//</span>
+                <span className="hero-section__slash">{"//"}</span>
                 <span>AVAILABLE</span>
-                <span className="hero-section__slash">//</span>
+                <span className="hero-section__slash">{"//"}</span>
               </div>
               <div className="hero-section__status">
-                <span className="hero-section__slash">//</span>
+                <span className="hero-section__slash">{"//"}</span>
                 <span>Q1 2026</span>
-                <span className="hero-section__slash">//</span>
+                <span className="hero-section__slash">{"//"}</span>
               </div>
             </div>
           </div>
