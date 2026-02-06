@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
 import { Fira_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Nav";
@@ -52,6 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Script defer src="https://cloud.umami.is/script.js" data-website-id="7db19975-013f-4646-8b49-dc5c0b9a2d87" />
       <body className={`${fira_mono.className} antialiased flex flex-col justify-between absolute inset-0 overflow-auto bg-gradient-to-br from-[#050505] via-[#0a0a0a] to-[#151515`}>
         <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-[#7af42a]/20 to-transparent blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-[#2ae8c4]/20 to-transparent blur-3xl pointer-events-none"></div>
