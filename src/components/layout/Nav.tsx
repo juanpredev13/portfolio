@@ -31,7 +31,7 @@ const Navbar = () => {
     return (
         <nav className="container navbar" aria-label="Main Navigation">
             <div className="navbar__brand">
-                <Link href="/" className="navbar__brand-name">juanpredev</Link>
+                <Link href="/" className="navbar__brand-name" data-umami-event="click-nav-brand">juanpredev</Link>
                 <button 
                     className="navbar__toggle" 
                     onClick={toggleMenu}
@@ -48,6 +48,7 @@ const Navbar = () => {
                         href={link.href}
                         className={`navbar__links-link ${pathname === link.href ? "navbar__links-link--active" : ""}`}
                         aria-current={pathname === link.href ? "page" : undefined}
+                        data-umami-event={`click-nav-${link.label.replace('#', '')}`}
                     >
                         {link.label}
                     </Link>
