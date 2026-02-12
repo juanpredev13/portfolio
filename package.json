@@ -32,6 +32,12 @@
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
@@ -41,8 +47,6 @@
     "postcss": "^8",
     "postcss-import": "^15.0.0",
     "postcss-nesting": "^10.2.0",
-    "puppeteer": "^24.36.1",
-    "start-server-and-test": "^2.0.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
