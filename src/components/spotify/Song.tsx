@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { CurrentlyPlayingResponse } from '@/types/spotify';
 
 export default function Song() {
@@ -11,8 +10,9 @@ export default function Song() {
   useEffect(() => {
     const fetchCurrentSong = async () => {
       try {
-        const response = await axios.get('/api/currently-playing');
-        setSong(response.data);
+        const response = await fetch('/api/currently-playing');
+        const data = await response.json();
+        setSong(data);
       } catch (error: unknown) {
         if (error instanceof Error) {
           console.error('Error fetching current song:', error.message);
