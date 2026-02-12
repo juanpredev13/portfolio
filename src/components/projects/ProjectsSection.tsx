@@ -133,7 +133,7 @@ export default function DevToolsGrid({ featuredOnly = false, showFilters = true 
         {/* See more button */}
         {featuredOnly && (
           <div className="dev-tools-grid__see-more">
-            <Link href="/projects" className="dev-tools-grid__see-more-btn">
+            <Link href="/projects" className="dev-tools-grid__see-more-btn" data-umami-event="click-see-more-projects">
               See more projects <ArrowUpRight className="w-5 h-5 inline-block ml-1" />
             </Link>
           </div>

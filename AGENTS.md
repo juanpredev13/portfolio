@@ -100,6 +100,22 @@ Follow the Shadcn pattern:
 - Mobile navigation uses `dynamic(() => import(), { ssr: false })`.
 - The projects section supports two display modes: BENTO (grid) and TREE (list).
 
+## Analytics — Umami Event Tracking
+
+The Umami script is loaded in `src/app/layout.tsx`. Track user interactions by adding the `data-umami-event` HTML attribute (no JS required).
+
+**Naming convention:** `click-{context}-{label}` (all lowercase, hyphen-separated).
+
+| Element | File | Event Name |
+|---------|------|------------|
+| Glass card "GET IN TOUCH" button | `src/components/home/HeroSection.tsx` | `click-get-in-touch-desktop` |
+| Mobile "GET IN TOUCH" button | `src/components/home/HeroButton.tsx` | `click-get-in-touch-mobile` |
+| "See more projects" link | `src/components/projects/ProjectsSection.tsx` | `click-see-more-projects` |
+| Desktop nav links (brand + #projects) | `src/components/layout/Nav.tsx` | `click-nav-{label}` |
+| Mobile nav TreeView links | `src/components/treeView.tsx` | `click-nav-mobile-{label}` |
+
+**Docs:** https://umami.is/docs/track-events
+
 ## Known Incomplete Features
 
 These are intentionally unfinished — don't "fix" them unless explicitly asked:

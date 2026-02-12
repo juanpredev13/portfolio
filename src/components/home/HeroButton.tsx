@@ -11,7 +11,7 @@ export default function HeroButton() {
     };
 
     return (
-        <button className="hero-section__button" ref={glitch.ref} onClick={handleClick}>
+        <button className="hero-section__button" ref={glitch.ref} onClick={handleClick} data-umami-event="click-get-in-touch-mobile">
             GET IN TOUCH
         </button>
     );

@@ -28,6 +28,7 @@ const TreeItem = ({ item, isLast = false }: { item: TreeItem; isLast?: boolean }
                     <Link
                         href={item.href}
                         className="hover:text-lawn-green transition-colors duration-200 font-mono text-french-gray text-xl"
+                        data-umami-event={`click-nav-mobile-${item.label.replace('.ts', '').toLowerCase()}`}
                     >
                         {item.label}
                     </Link>

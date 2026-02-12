@@ -120,6 +120,7 @@ export default function HeroSection() {
               <button
                 className="hero-section__glass-cta"
                 onClick={handleContact}
+                data-umami-event="click-get-in-touch-desktop"
               >
                 GET IN TOUCH
               </button>
