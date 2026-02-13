@@ -1,11 +1,11 @@
 /* styles/HeroSection.css */
 .hero-section {
-  @apply flex items-center justify-center w-full;
-  min-height: 90vh;
+  @apply flex flex-col justify-between w-full;
+  height: calc(100vh - 80px);
 
   &__content {
     gap: 30px;
-    @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-1;
+    @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-1 flex-grow items-center;
   }
 
   &__text {
@@ -49,7 +49,6 @@
   /* Glass Card */
   &__glass-wrapper {
     @apply hidden md:flex items-start justify-end order-1 md:order-2;
-    align-self: start;
     min-height: 20rem; /* Prevents layout jump when child becomes fixed */
   }
 
@@ -154,49 +153,42 @@
     color: #000000;
   }
 
-  /* Scroll indicator */
-  &__scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    border: 2px solid #7af42a;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Bottom section */
+  &__bottom {
+    @apply pb-8;
+  }
+
+  &__divider {
+    @apply w-full;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &__bottom-content {
+    @apply flex flex-col md:flex-row items-start md:items-end justify-between mt-1;
+    gap: 1.5rem;
+  }
+
+  &__explore {
+    @apply text-sm font-bold tracking-[0.2em] uppercase;
+    color: #7af42a;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    animation: bounce 2s infinite;
+    font-family: var(--font-fira-mono), monospace;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
 
     &:hover {
-      background: #7af42a;
-
-      .hero-section__scroll-icon {
-        color: #000000;
-      }
+      opacity: 0.7;
     }
   }
 
-  &__scroll-icon {
-    color: #7af42a;
-    width: 24px;
-    height: 24px;
-    transition: color 0.3s ease;
-  }
-
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    40% {
-      transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-      transform: translateX(-50%) translateY(-5px);
-    }
+  &__description {
+    @apply text-xs tracking-[0.1em] uppercase text-left md:text-right;
+    color: rgba(255, 255, 255, 0.4);
+    max-width: 32rem;
+    line-height: 1.6;
+    font-family: var(--font-fira-mono), monospace;
   }
 }

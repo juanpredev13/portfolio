@@ -1,7 +1,6 @@
 "use client";
 import Image from 'next/image';
 import HeroButton from '@/components/home/HeroButton';
-import { ChevronDown } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useGlitch } from 'react-powerglitch';
 
@@ -18,29 +17,42 @@ export default function HeroSection() {
 
   const scrollToProjects = () => {
     const projectsSection = document.querySelector('.project-section');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+    if (!projectsSection) return;
+
+    const targetY = projectsSection.getBoundingClientRect().top + window.scrollY;
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    const duration = 1500;
+    let start: number | null = null;
+
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+      window.scrollTo(0, startY + distance * ease);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
   };
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const targetRight = 24; // final distance from screen edge
-    const scrollRange = 400; // px of scroll over which the slide happens
+    const targetRight = 24;
+    const scrollRange = 400;
 
     const handleScroll = () => {
       const wrapperRect = wrapper.getBoundingClientRect();
-
-      // How far the card naturally sits from the right edge of the screen
       const naturalRight = window.innerWidth - wrapperRect.right;
-
-      // Trigger when wrapper scrolls past 100px from top
       const triggerOffset = 100 - wrapperRect.top;
 
       if (triggerOffset > 0) {
-        // 0 → 1 progress over scrollRange
         const progress = Math.min(1, triggerOffset / scrollRange);
-        // Smoothly interpolate right from natural position to screen edge
         const currentRight = naturalRight + (targetRight - naturalRight) * progress;
 
         setCardStyle({
@@ -69,12 +81,12 @@ export default function HeroSection() {
     <div className="hero-section section">
       <div className="hero-section__content">
         <div className="hero-section__text">
-          <p className="hero-section__overline">Hello, my name is</p>
+          <p className="hero-section__overline">Juanpre.</p>
           <h1 className="hero-section__title title">
-            Juanpre. <br /> I made <span className="hero-section__highlight">web solutions</span>
+            Building scalable <span className="hero-section__highlight">web experiences</span>
           </h1>
           <p className="hero-section__subtitle">
-            He crafts responsive websites where technologies meet creativity
+            where technology meets creativity.
           </p>
           <div className="lg:hidden">
             <HeroButton />
@@ -103,7 +115,6 @@ export default function HeroSection() {
                 <div className="hero-section__orb hero-section__orb--2"></div>
                 <div className="hero-section__orb hero-section__orb--3"></div>
               </div>
-              {/* Profile image overlay */}
               <div className="hero-section__profile-overlay">
                 <Image
                   src="/images/man4.webp"
@@ -121,7 +132,7 @@ export default function HeroSection() {
                 </div>
                 <div className="hero-section__status">
                   <span className="hero-section__slash">{"//"}</span>
-                  <span>Q1 2026</span>
+                  <span>FREELANCE</span>
                   <span className="hero-section__slash">{"//"}</span>
                 </div>
               </div>
@@ -133,10 +144,22 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <button className="hero-section__scroll-indicator" onClick={scrollToProjects} aria-label="Scroll to projects">
-        <ChevronDown className="hero-section__scroll-icon" />
-      </button>
+      {/* Bottom section */}
+      <div className="hero-section__bottom">
+        <div className="hero-section__divider"></div>
+        <div className="hero-section__bottom-content">
+          <button
+            className="hero-section__explore"
+            onClick={scrollToProjects}
+            data-umami-event="click-explore-work"
+          >
+            EXPLORE MY WORK &darr;
+          </button>
+          <p className="hero-section__description">
+            FULL-STACK DEVELOPER AND HACKER DRIVEN BY A PASSION FOR BUILDING EFFICIENT, SECURE APPLICATIONS. EXPERTISE IN WEB DEVELOPMENT, WITH A FOCUS ON PERFORMANCE AND SECURITY, PUSHING BOUNDARIES IN CODE.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
