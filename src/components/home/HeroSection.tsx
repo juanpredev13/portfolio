@@ -89,7 +89,15 @@ export default function HeroSection() {
             style={Object.keys(cardStyle).length > 0 ? cardStyle : undefined}
           >
             <div className="hero-section__aura"></div>
-            <div ref={glitch.ref} className="hero-section__glass-card">
+            <div
+              ref={glitch.ref}
+              className="hero-section__glass-card cursor-pointer"
+              onClick={handleContact}
+              data-umami-event="click-get-in-touch-desktop"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleContact(); }}
+            >
               <div className="hero-section__glass-glow">
                 <div className="hero-section__orb hero-section__orb--1"></div>
                 <div className="hero-section__orb hero-section__orb--2"></div>
@@ -117,13 +125,9 @@ export default function HeroSection() {
                   <span className="hero-section__slash">{"//"}</span>
                 </div>
               </div>
-              <button
-                className="hero-section__glass-cta"
-                onClick={handleContact}
-                data-umami-event="click-get-in-touch-desktop"
-              >
+              <span className="hero-section__glass-cta">
                 GET IN TOUCH
-              </button>
+              </span>
             </div>
           </div>
         </div>

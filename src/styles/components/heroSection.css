@@ -140,19 +140,18 @@
   }
 
   &__glass-cta {
-    @apply w-full text-xs font-bold tracking-[0.2em] uppercase;
+    @apply w-full text-xs font-bold tracking-[0.2em] uppercase text-center;
     padding: 14px 0;
     background: rgba(0, 0, 0, 0.2);
     color: #7af42a;
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
+  }
 
-    &:hover {
-      background-color: #7af42a;
-      color: #000000;
-    }
+  &__glass-card:hover &__glass-cta {
+    background-color: #7af42a;
+    color: #000000;
   }
 
   /* Scroll indicator */
